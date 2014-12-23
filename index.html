@@ -15,7 +15,7 @@
     <header class="masthead">
   <div class="container">
     <span class="icon">&#9997;</span>
-    <h1>前端编码规范 <small>V1.1</small></h1>
+    <h1>前端编码规范 <small>V1.2</small></h1>
     <p class="lead">这仅仅是一套针对ET前端开发量身定制的前端规范</p>
   </div>
 </header>
@@ -39,14 +39,14 @@
       <li><a href="#html-boolean-attributes">布尔（boolean）型属性</a></li>
       <li><a href="#html-reducing-markup">减少标签的数量</a></li>
       <li><a href="#html-javascript">JavaScript 生成的标签</a></li>
+      <li><a href="#html-browser-version">浏览器版本判断</a></li>
     </ul>
   </div>
   <div class="col">
-    <h4><a href="#css">CSS</a></h4>
+    <h4><a href="#css">CSS/JS</a></h4>
     <ul>
       <li><a href="#css-syntax">语法</a></li>
       <li><a href="#css-declaration-order">声明顺序</a></li>
-      <li><a href="#css-media-queries">媒体查询（Media query）的位置</a></li>
       <li><a href="#css-prefixed-properties">带前缀的属性</a></li>
       <li><a href="#css-single-declarations">单行规则声明</a></li>
       <li><a href="#css-shorthand">简写形式的属性声明</a></li>
@@ -55,6 +55,7 @@
       <li><a href="#css-classes">class 命名</a></li>
       <li><a href="#css-selectors">选择器</a></li>
       <li><a href="#css-organization">代码组织</a></li>
+      <li><a href="#js-guide">JS规范</a></li>
     </ul>
   </div>
 </div>
@@ -67,7 +68,7 @@
   </div>
   <div class="col">
     <blockquote>
-      <p><strong>嗨，亲爱的菜鸟：</strong></p>
+      <p><strong>嗨，菜鸟：</strong></p>
       <p>不管你自认为有多么牛逼，不管你是否认同此规范，我们希望的是无论有多少人共同参与同一项目，一定要确保每一行代码都像是同一个人编写的，所以你需要牢记现以下内容！</p>
     </blockquote>
   </div>
@@ -108,7 +109,7 @@
 <div class="section" id="html-doctype">
   <div class="col">
     <h3>HTML5 doctype</h3>
-    <p>为每个 HTML 页面的第一行添加标准模式的声明，这样能够确保在每个浏览器中拥有一致的展现。</p>
+    <p>为每个 HTML 页面的第一行添加标准模式（standard mode）的声明，这样能够确保在每个浏览器中拥有一致的展现。</p>
   </div>
   <div class="col">
     <div class="highlight"><pre><code class="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
@@ -271,7 +272,13 @@
     <p>通过 JavaScript 生成的标签让内容变得不易查找、编辑，并且降低性能。能避免时尽量避免。</p>
   </div>
 </div>
-
+<div class="section" id="html-browser-version">
+  <div class="col">
+    <h3>浏览器版本判断</h3>
+    <p>条件注释是写在html里的只会被IE识别的代码，一般在<head>区域通过不同的条件注释导入不同的CSS，不同的IE浏览器会引用不同的CSS
+    <a href="http://www.cnblogs.com/dtdxrk/archive/2012/03/06/2381868.html" target="_blank">去这里看CASE</a></p>
+  </div>
+</div>
 
 
 <div class="heading" id="css">
@@ -287,7 +294,7 @@
       <li>为了代码的易读性，在每个声明块的左花括号前添加一个空格。</li>
       <li>声明块的右花括号应当单独成行。</li>
       <li>每条声明语句的 <code>:</code> 后应该插入一个空格。</li>
-      <li>为了获得更准确的错误报告，每条声明都应该独占一行。</li>
+      <li>为了获得更准确的错误报告，每条声明都应该独占一行(不做强硬要求)。</li>
       <li>所有声明语句都应当以分号结尾。最后一条声明语句后面的分号是可选的，但是，如果省略这个分号，你的代码可能更易出错。</li>
       <li>对于以逗号分隔的属性值，每个逗号后面都应该插入一个空格（例如，<code>box-shadow</code>）。</li>
       <li>不要在 <code>rgb()</code>、<code>rgba()</code>、<code>hsl()</code>、<code>hsla()</code> 或 <code>rect()</code> 值的<em>内部</em>的逗号后面插入空格。这样利于从多个属性值（既加逗号也加空格）中区分多个颜色值（只加逗号，不加空格）。</li>
@@ -351,8 +358,8 @@
   <span class="k">width</span><span class="o">:</span> <span class="m">100px</span><span class="p">;</span>
   <span class="k">height</span><span class="o">:</span> <span class="m">100px</span><span class="p">;</span>
 
-  <span class="c">/* Typography */</span>
-  <span class="k">font</span><span class="o">:</span> <span class="k">normal</span> <span class="m">13px</span> <span class="s2">&quot;Helvetica Neue&quot;</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
+  <span class="c">/* Typographic */</span>
+  <span class="k">font</span><span class="o">:</span> <span class="k">normal</span> <span class="m">13px</span> <span class="s2">&quot;\5FAE\8F6F\96C5\9ED1&quot;</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
   <span class="k">line-height</span><span class="o">:</span> <span class="m">1</span><span class="o">.</span><span class="m">5</span><span class="p">;</span>
   <span class="k">color</span><span class="o">:</span> <span class="m">#333</span><span class="p">;</span>
   <span class="k">text-align</span><span class="o">:</span> <span class="k">center</span><span class="p">;</span>
@@ -392,24 +399,6 @@
   </div>
 </div>
 
-<div class="section" id="css-media-queries">
-  <div class="col">
-    <h3>媒体查询（Media query）的位置</h3>
-    <p>将媒体查询放在尽可能相关规则的附近。不要将他们打包放在一个单一样式文件中或者放在文档底部。如果你把他们分开了，将来只会被大家遗忘。下面给出一个典型的实例。</p>
-  </div>
-  <div class="col">
-    <div class="highlight"><pre><code class="css"><span class="nc">.element</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
-<span class="nc">.element-avatar</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
-<span class="nc">.element-selected</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
-
-<span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="nt">480px</span><span class="o">)</span> <span class="p">{</span>
-  <span class="nc">.element</span> <span class="p">{</span> <span class="o">...</span><span class="p">}</span>
-  <span class="nc">.element-avatar</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
-  <span class="nc">.element-selected</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-  </div>
-</div>
 
 <div class="section" id="css-prefixed-properties">
   <div class="col">
@@ -615,6 +604,21 @@
 <span class="c">/* Contextual sub-component or modifer */</span>
 <span class="nc">.element-heading</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
 </code></pre></div>
+  </div>
+</div>
+<div class="section" id="js-guide" >
+  <div class="col">
+    <h3>JS细化规范</h3>
+    <ul>
+      <li>JS 换行缩进：采用 4 空格</li>
+      <li>结束行需添加分号;</li>
+      <li>jQuery变量要求首字符为 $, 私有变量:首字符为_; 尽量避免全局变量.</li>
+      <li>避免使用 eval()，setTimeOut使用调用函数，考虑重绘，回流 操作对页面影响 参看：<a href="http://www.zhangxinxu.com/wordpress/2010/01/%E5%9B%9E%E6%B5%81%E4%B8%8E%E9%87%8D%E7%BB%98%EF%BC%9Acss%E6%80%A7%E8%83%BD%E8%AE%A9javascript%E5%8F%98%E6%85%A2%EF%BC%9F/" target="_blank">reflows，repaints</a></li>
+      <liJS调试使用console.log()及console.dir()进行，避免使用弹出框，线上版需要注释所有调试代码></li>
+    </ul>
+  </div>
+  <div class="col">
+
   </div>
 </div>
 
